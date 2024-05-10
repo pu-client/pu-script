@@ -17,10 +17,11 @@ const start=(()=>{
     console.log("已找到目标时间: "+time)
     return time.getTime();
 })()
-
+let cd=-1;
 setInterval(()=>{
     const now=new Date().getTime();
-    if(now>=start){
+    if(now>=start&&now >= cd){
+        cd=now+3000;
         console.log("时间到，开始点击!")
         target.click();
     }
